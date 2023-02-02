@@ -11,6 +11,8 @@ jobs:
         with:
           type: 'zip'
           filename: 'release.zip'
+          directory: '.'
+          path: '.'
           exclusions: '*.git* /*node_modules/*'
 # jobs:
 #   zip:
