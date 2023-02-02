@@ -10,13 +10,13 @@ jobs:
         uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
-          filename: 'release.zip'
+          filename: 'zipped/release.zip'
           directory: '.'
           path: '.'
           exclusions: '*.git* /*node_modules/* **/*.zip'
       - uses: actions/upload-artifact@v3
         with:
-          name: zipped/release.zip
+          name: release.zip
           path: release.zip
       - name: Display structure of downloaded files
         run: ls -R
