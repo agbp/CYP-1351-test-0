@@ -1,0 +1,14 @@
+name: Labeler
+on: [push]
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install zip
+        uses: montudor/action-zip@v1
+
+      - name: Zip output
+        run: zip -qq -r test.zip package.json
+        working-directory: test/zip/
