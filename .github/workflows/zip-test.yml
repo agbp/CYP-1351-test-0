@@ -5,12 +5,21 @@ jobs:
   zip:
     runs-on: ubuntu-latest
 
+  zip-files:
+    runs-on: ubuntu-latest
     steps:
-      - name: Install zip
-        uses: montudor/action-zip@v1
+      - uses: actions/checkout@v2
+      - uses: vimtor/action-zip@v1
         with:
-          args: zip -qq -r public.zip . -i public
-      # - name: Zip output
-      #   run: zip -qq -r test.zip . -i package.json
-      # run: zip -qq -r test.zip package.json
-      # working-directory: test/zip/
+          files: public/ package.json
+          dest: result.zip
+
+    # steps:
+    #   - name: zip public
+    #     uses: montudor/action-zip@v1
+    #     with:
+    #       args: zip -qq -r public.zip . -i public
+    # - name: Zip output
+    #   run: zip -qq -r test.zip . -i package.json
+    # run: zip -qq -r test.zip package.json
+    # working-directory: test/zip/
