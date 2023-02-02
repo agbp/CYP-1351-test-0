@@ -21,11 +21,11 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: zipped
-      - name: Upload Release
-        uses: ncipollo/release-action@v1.12.0
-        with:
-          artifacts: 'release.zip'
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Upload Release
+      #   uses: ncipollo/release-action@v1.12.0
+      #   with:
+      #     artifacts: 'release.zip'
+      #     token: ${{ secrets.GITHUB_TOKEN }}
       - name: Download artifacts
         uses: actions/checkout@v3
 
