@@ -1,4 +1,4 @@
-name: Labeler
+name: Archive
 on: [push]
 
 jobs:
