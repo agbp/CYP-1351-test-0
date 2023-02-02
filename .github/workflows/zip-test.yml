@@ -11,7 +11,7 @@ jobs:
         with:
           type: 'zip'
           filename: 'release.zip'
-          exclusions: '/*public/* package.json'
+          exclusions: '/*node_modules/*'
 # jobs:
 #   zip:
 #     runs-on: ubuntu-latest
