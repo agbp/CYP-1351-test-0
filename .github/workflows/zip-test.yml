@@ -13,7 +13,11 @@ jobs:
           filename: 'release.zip'
           directory: '.'
           path: '.'
-          exclusions: '*.git* /*node_modules/*'
+          exclusions: '*.git* /*node_modules/* **/*.zip'
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release.zip
+          path: release.zip
 # jobs:
 #   zip:
 #     runs-on: ubuntu-latest
