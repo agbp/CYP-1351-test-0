@@ -16,8 +16,11 @@ jobs:
           exclusions: '*.git* /*node_modules/* **/*.zip'
       - uses: actions/upload-artifact@v3
         with:
-          name: release.zip
-          path: release.zip
+          name: release2.zip
+          path: zipped/release.zip
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: zipped
 # jobs:
 #   zip:
 #     runs-on: ubuntu-latest
