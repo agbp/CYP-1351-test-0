@@ -13,7 +13,7 @@ jobs:
       - name: Display files
         run: ls -R
       - name: upload test
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@master
         with:
           name: rel-test-name
           path: rel-test
