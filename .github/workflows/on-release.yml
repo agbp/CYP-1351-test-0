@@ -5,6 +5,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v1
       - name: create some rel-test content
         run: |
           mkdir rel-test
