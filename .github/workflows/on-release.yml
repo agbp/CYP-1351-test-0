@@ -1,5 +1,9 @@
 name: CI
-on: [release]
+# on: [release]
+on:
+  push:
+  release:
+    types: [published]
 
 jobs:
   create-test-files:
@@ -39,6 +43,7 @@ jobs:
         with:
           name: zipped-release.zip
       - name: Upload to release
+        if: github.event_name == 'release'
         uses: JasonEtco/upload-to-release@v0.1.1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
