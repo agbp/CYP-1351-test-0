@@ -5,7 +5,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - name: create some rel-test content
         run: |
-          mkdir test
-          touch test.txt
+          mkdir rel-test
+          cd rel-test
+          touch rel-test.txt
+      - name: Display files
+        run: ls -R
+      - name: upload test
+        uses: actions/upload-artifact
+        with:
+          name: rel-test-name
+          path: rel-test
