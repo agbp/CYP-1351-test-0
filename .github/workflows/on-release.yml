@@ -42,4 +42,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          args: zipped-release.zip
+          args: zipped-release.zip application/zip
