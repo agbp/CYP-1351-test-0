@@ -28,4 +28,4 @@ jobs:
       - name: download atrifacts rrel-test
         uses: actions/download-artifact@master
         with:
-          name: rel-test
+          name: rel-test-name
