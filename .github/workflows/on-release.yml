@@ -1,0 +1,11 @@
+name: CI
+on: release
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |
+          mkdir test
+          touch test.txt
