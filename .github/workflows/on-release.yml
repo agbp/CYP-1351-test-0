@@ -12,8 +12,8 @@ jobs:
           touch rel-test.txt
       - name: Display files
         run: ls -R
-      - name: upload test
-        uses: actions/upload-artifact
-        with:
-          name: rel-test-name
-          path: rel-test
+      # - name: upload test
+      #   uses: actions/upload-artifact
+      #   with:
+      #     name: rel-test-name
+      #     path: rel-test
