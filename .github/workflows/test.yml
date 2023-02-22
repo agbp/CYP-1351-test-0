@@ -53,9 +53,10 @@ jobs:
         with:
           # upload_url: https://github.com/agbp/CYP-1351-test-0.git/releases/tag/0.0.11
           # upload_url: 'https://uploads.github.com/repos/agbp/CYP-1351-test-0/releases/93335839/'
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          # upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           # upload_url: ${{ steps.geturl.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           # upload_url: https://api.github.com/repos/${{github.repository}}/releases/latest/assets?name https://api.github.com/repos/${{github.repository}}/releases/latest/assetslabel
+          upload_url: https://uploads.github.com/repos/agbp/CYP-1351-test-0/releases/latest/assets{?name,label}
           asset_path: zipped-release.zip
           asset_name: zipped-release.zip
           asset_content_type: application/zip
