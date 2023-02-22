@@ -36,7 +36,7 @@ jobs:
       - name: test upload_url
         run: |
           echo "upload url"
-          echo ===${{ steps.create_release.outputs.upload_url }}"===
+          echo === + ${{ steps.create_release.outputs.upload_url }} + ===
 
       - name: Get upload URL
         id: geturl
