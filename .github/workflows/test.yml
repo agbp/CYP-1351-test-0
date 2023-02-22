@@ -44,9 +44,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # upload_url: https://github.com/agbp/CYP-1351-test-0.git/releases/tag/0.0.11
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: https://github.com/agbp/CYP-1351-test-0/releases/tag/0.0.22
+          # upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: zipped-release.zip
-          asset_name: zipped-release.zip
+          asset_name: zipped-release-2.zip
           asset_content_type: application/zip
   upload-to-release:
     permissions: write-all
