@@ -22,21 +22,21 @@ jobs:
         with:
           name: zipped-release.zip
           path: zipped-release.zip
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: Release ${{ github.ref }}
+      #     draft: false
+      #     prerelease: false
 
-      - name: test upload_url
-        run: |
-          echo "upload url"
-          echo === + ${{ steps.create_release.outputs.upload_url }} + ===
+      # - name: test upload_url
+      #   run: |
+      #     echo "upload url"
+      #     echo === + ${{ steps.create_release.outputs.upload_url }} + ===
 
       - name: Get upload URL
         id: geturl
@@ -58,9 +58,9 @@ jobs:
           # upload_url: https://api.github.com/repos/${{github.repository}}/releases/latest/assets?name https://api.github.com/repos/${{github.repository}}/releases/latest/assetslabel
           # upload_url: https://uploads.github.com/repos/agbp/CYP-1351-test-0/releases/latest/assets{?name,label}
           # upload_url: https://uploads.github.com/repos/agbp/CYP-1351-test-0/releases/93340474/assets{?name,label}
-          upload_url: https://uploads.github.com/repos/${{github.repository}}/releases/latest/assets?name https://uploads.github.com/repos/${{github.repository}}/releases/latest/assetslabel
+          upload_url: https://uploads.github.com/repos/${{github.repository}}/releases/latest/assets?name=zipped-release.zip
           asset_path: zipped-release.zip
-          asset_name: zipped-release-2.zip
+          asset_name: zipped-release.zip
           asset_content_type: application/zip
   upload-to-release:
     permissions: write-all
